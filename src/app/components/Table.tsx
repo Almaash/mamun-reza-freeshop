@@ -12,8 +12,7 @@ export interface Article {
 
 interface ArticleTableProps {
   articles: Article[]
-  onEdit: (id: string) => void
-  onDelete: (id: string) => void
+
 }
 
 export function Table({ articles }: ArticleTableProps) {

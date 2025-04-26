@@ -1,7 +1,6 @@
 "use client"
 
 import { useState } from "react"
-import Image from "next/image"
 
 export interface Article {
   id: string
@@ -12,8 +11,7 @@ export interface Article {
 
 interface ArticleTableProps {
   articles: Article[]
-  onEdit: (id: string) => void
-  onDelete: (id: string) => void
+ 
 }
 
 export function Table({ articles }: ArticleTableProps) {

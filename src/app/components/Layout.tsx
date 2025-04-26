@@ -1,6 +1,11 @@
-import Sidebar from './Sidebar';
+import { ReactNode } from "react";
+import Sidebar from "./Sidebar";
 
-const Layout: React.FC = ({ children }: any) => {
+interface LayoutProps {
+  children: ReactNode;
+}
+
+const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
     <div className="flex h-screen">
       {/* Fixed Sidebar */}

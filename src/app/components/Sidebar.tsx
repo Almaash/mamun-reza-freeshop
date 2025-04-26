@@ -1,11 +1,12 @@
 import Link from "next/link";
 import { Newspaper, MapPin, HelpCircle, Car, ShoppingCart } from "lucide-react";
+import Image from "next/image";
 
 const Sidebar: React.FC = () => {
   return (
     <div className="w-64 text-black h-screen p-4 shadow-2xl border-r border-gray-200">
       <div className="text-base font-bold">
-        <img src="/image.png" alt="Logo" className="h-12 w-auto" />
+        <Image src="/image.png" alt="Logo" className="h-12 w-auto" />
       </div>
       <ul className="mt-8 space-y-4 text-base">
         <li>

@@ -1,22 +1,22 @@
-'use client'
+'use client';
 
 import { useState, useEffect } from "react";
-import { Table } from "../components/table";
 import axios from "axios";
+import { Table } from "../components/Table"; // ✅ Corrected import
 
 const AboutPage = () => {
-  const [articles, setArticles] = useState<Article[]>([]);
+  const [articles, setArticles] = useState([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
 
-  // Fetching data from the API when the component mounts
   useEffect(() => {
     const fetchArticles = async () => {
       try {
-        const response = await axios.get("/api/articles"); // Replace with your actual API endpoint
-        setArticles(response.data); // Assuming the response is an array of articles
+        const response = await axios.get("/api/articles");
+        setArticles(response.data);
         setLoading(false);
       } catch (error) {
+        console.log(error)
         setError("Failed to load data");
         setLoading(false);
       }

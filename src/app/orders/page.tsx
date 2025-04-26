@@ -1,11 +1,11 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Table, Article } from "./orderTable";
+import { Table } from "./orderTable";
 import axios from "axios";
 
 const AboutPage = () => {
-  const [articles, setArticles] = useState<Article[]>([]);
+  const [articles, setArticles] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -14,7 +14,7 @@ const AboutPage = () => {
         const response = await axios.get("/api/orders"); // your API endpoint here
         setArticles(response.data);
       } catch (error) {
-        console.error("Error fetching articles:", error);
+        console.log("Error fetching articles:", error);
       } finally {
         setLoading(false);
       }

@@ -1,11 +1,11 @@
 'use client'
 
 import { useState, useEffect } from "react";
-import { Table } from "../components/table";
+import { Table } from "../components/Table";
 import axios from "axios";
 
 const AboutPage = () => {
-  const [articles, setArticles] = useState<Article[]>([]);
+  const [articles, setArticles] = useState([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -17,6 +17,7 @@ const AboutPage = () => {
         setArticles(response.data); // Assuming the response is an array of articles
         setLoading(false);
       } catch (error) {
+        console.log(error)
         setError("Failed to load articles");
         setLoading(false);
       }
